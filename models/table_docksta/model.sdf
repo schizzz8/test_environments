@@ -18,7 +18,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/dede/Downloads/model.dae</uri>
+            <uri>file://table_docksta/model.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -42,7 +42,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://test_environments/models/table_docksta/model.dae</uri>
+            <uri>file://table_docksta/model.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -93,7 +93,7 @@
         </surface>
       </collision>
     </link>
-    <static>0</static>
+    <static>1</static>
     <allow_auto_disable>1</allow_auto_disable>
   </model>
 </sdf>

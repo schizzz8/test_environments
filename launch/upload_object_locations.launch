@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Set GAZEBO_MODEL_PATH 
+  <env name="GAZEBO_MODEL_PATH" value="$(find test_environments)/models/"/>
+-->
+
+  <!-- send objects locations to parameter server -->
+  <rosparam command="load" ns="objects" file="$(find test_environments)/config/object_locations.yaml"/>
+  <rosparam command="load" ns="object_groups" file="$(find test_environments)/config/object_groups.yaml"/>
+
+
+</launch>

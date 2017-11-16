@@ -1,0 +1,6 @@
+table_docksta:
+  model: table_docksta
+  model_type: sdf
+  position: [ -1.5, -1.0, 1.9 ]
+  orientation: [0, 0, 1.570796]
+
