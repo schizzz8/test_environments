@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- define arguments -->
+	<arg name="world_name" default="worlds/empty.world"/>
+	<arg name="debug" default="false" />
+	<arg name="headless" default="false" />
+	<arg name="paused" default="false"/>
+	<arg name="use_sim_time" default="true"/>
+	<arg name="gui" default="true"/>
+
+	<!-- upload default configuration parameters -->
+	<include file="$(find test_environments)/launch/upload_object_locations.launch"/>
+
+	<!-- start gazebo with empty world -->
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="$(arg world_name)"/>
+		<arg name="debug" value="$(arg debug)" />
+		<arg name="headless" value="$(arg headless)"/>
+		<arg name="paused" value="$(arg paused)" />
+		<arg name="use_sim_time" value="$(arg use_sim_time)" />
+		<arg name="gui" value="$(arg gui)" />
+	</include>
+
+
+  <!-- Spawn the apartment into Gazebo -->
+  <node name="spawn_sdf_1" pkg="gazebo_ros" type="spawn_model" args="-file $(find test_environments)/models/small_apartment_2/model.sdf -sdf -model small_apartment_2" />
+
+  <!-- Spawn the objects into Gazebo -->
+  <node name="spawn_objects" pkg="test_environments" type="spawn_object.py" args="all"/>
+
+
+</launch>
